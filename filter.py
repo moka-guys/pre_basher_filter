@@ -14,7 +14,7 @@ def get_log() -> None:
     logger = logging.getLogger(__name__)
     logger.setLevel(logging.DEBUG)
     console_handler = logging.StreamHandler()
-    file_handler = logging.FileHandler('D:/Downloads/wmt/basher_filter_log.log')
+    file_handler = logging.FileHandler('D:/Downloads/wmt/basher_filter_log.log') # need to update
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     console_handler.setFormatter(formatter)
     file_handler.setFormatter(formatter)
@@ -34,7 +34,7 @@ def conversion(file_dir) -> None:
         rhchp_file = os.path.join(file_dir, rhchp)
         file_name = os.path.splitext(os.path.basename(rhchp))[0]
         file_name1 = os.path.join(file_dir, file_name)
-        powershell_command = f"D:\Downloads\wmt\MSV.CNGenotypeExportTool\MSV.CNGenotypeExportTool.exe --input {rhchp_file} --output {file_name1}.txt"
+        powershell_command = f"D:\Downloads\wmt\MSV.CNGenotypeExportTool\MSV.CNGenotypeExportTool.exe --input {rhchp_file} --output {file_name1}.txt" #update
 
         # Run PowerShell through subprocess
         process = subprocess.Popen(["powershell", "-Command", powershell_command], 
@@ -92,7 +92,7 @@ def filter_combine(file_dir) -> None:
     Filter the array file for only good snp and combine all files into a single txt file
     """
     good_snp_df = pd.read_excel("D:/Downloads/HT-CMA hg38 genome coverage.xlsx", sheet_name="Filtered SNPs good data set",
-    usecols=['probeset_id', "Chr", "Position"]) # can read only probeset ID
+    usecols=['probeset_id', "Chr", "Position"]) # can read only probeset ID, update
     all_files = os.listdir(file_dir)
     txt_files = [item for item in all_files if item.endswith('.txt') and os.path.isfile(os.path.join(file_dir, item))]
     dfs = []
@@ -138,6 +138,7 @@ def filter_combine(file_dir) -> None:
     # do sanity check
     if len(list(set(sanity_check))) > 1:
         print("check error")
+        logger.error(f"Error with filtering so the number of SNP in individual files are not consistent")
         raise SystemExit()
     
 
