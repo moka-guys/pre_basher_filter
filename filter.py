@@ -29,7 +29,7 @@ def get_arguments() -> argparse.Namespace:
         "-d",
         "--file_dir",
         required=True,
-        help="dir to rhchp file(s)",
+        help="directory where rhchp files are stored",
         )
     parser.add_argument(
         "-c",
@@ -66,7 +66,7 @@ def get_arguments() -> argparse.Namespace:
         "--included",
         type=str,
         nargs="+",
-        help="specify file(s) to be included, required if mode is option2",
+        help="specify file name(s) to be included, required if mode is option2",
         )
     parser.add_argument(
         "-m",

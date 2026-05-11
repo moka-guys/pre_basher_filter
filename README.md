@@ -4,12 +4,13 @@ The tool has two mode (option1 and option2). Option1 converts all rhchp files (i
 To run standalone python script, download the github repo from https://github.com/moka-guys/pre_basher_filter
 
 - To run option1 --> `python filter.py -d </dir/for/rhchp_files>`
-- To run option2 --> `python filter.py -d </dir/for/rhchp_files> -m opiton2 -i <txt file name>`
+- To run option2 --> `python filter.py -d </dir/for/rhchp_files> -m option2 -i <txt file name>`
 
 
 The tool has optional input args to filter by chromosome and POS. For that, use the flag -c (for selected chromosome), --start and --end for POS.
 
 ***Requirements***
+- python-3.10.0
 - CytoScan_HTCMA_96.na36.r4.a1.annot.db - required for converting the rhchp file to txt file.
 - MSV.CNGenotypeExportTool.exe (tool from Thermofisher)
 - HT-CMA hg38 genome coverage.xlsx - reference file used to filter the unwanted SNP
