@@ -52,7 +52,7 @@ def get_arguments() -> argparse.Namespace:
     parser.add_argument(
         "-r",
         "--snp_ref",
-        default="S:/Genetics/DNA LAB/Current/PGD/pgd results/SNP array/Excels & BED files/HT-CMA hg38 genome coverage.xlsx",
+        default="S:/Genetics/Bioinformatics/Software/pre-basher/HT-CMA hg38 genome coverage.xlsx",
         help="path to ref file to filter snp",
         )
     parser.add_argument(
